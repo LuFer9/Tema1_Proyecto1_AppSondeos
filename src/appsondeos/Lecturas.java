@@ -58,13 +58,16 @@ public class Lecturas extends VBox{
     //Numero del libros al año
     Label lbLibrosAnio;
     Slider sLibrosAnio;
+    Label lbLibrosAnioRes;
     //Numero de paginas por hora
     Label lbVelocidadLectura;
     Slider sVelocidadLectura;
+    Label lbVelocidadLecturaRes;    
     //Numero de horas diarias a leer
     Label lbHorasLectura;
     Slider sHorasLectura;
-    
+    Label lbHorasLecturaRes;
+
     //Agrupaciones
     GridPane agProfesion;
     GridPane agEdad_Hermanos;
@@ -258,12 +261,85 @@ public class Lecturas extends VBox{
         this.getChildren().add(separador2);
         
         
-        //Añadimos 
+        //Añadimos lbDeslizadores a VBox
+        lbDeslizadores = new Label("Exponga en las siguientes barra los siguiente datos: ");
+        this.getChildren().add(lbDeslizadores);
         
         
+        //Creamos agLibrosAnio
+        agLibrosAnio = new GridPane();
+        agLibrosAnio.setHgap(10);
+        agLibrosAnio.setVgap(10);
+        agLibrosAnio.setPadding(new Insets(20,5,5,5));
+        agLibrosAnio.setAlignment(Pos.TOP_CENTER);
+        
+        //Añadimos lbLibrosAnio a agLibrosAnio
+        lbLibrosAnio = new Label("Libros al año: ");
+        agLibrosAnio.add(lbLibrosAnio, 0, 0);
+        
+        //Añadimos sLibrosAnio a agLibrosAnio
+        sLibrosAnio = new Slider(0,50,0);
+        sLibrosAnio.setShowTickLabels(true);
+        sLibrosAnio.setShowTickMarks(true);
+        agLibrosAnio.add(sLibrosAnio, 1, 0);
+        
+        //Añadimos sLibrosAnioRes a agLibrosAnio
+        lbLibrosAnioRes = new Label("");
+        agLibrosAnio.add(lbLibrosAnioRes, 2, 0);
+                
+        //Añadimos agLibrosAnio a VBox
+        this.getChildren().add(agLibrosAnio);
         
         
-        //Mostramos VBox
-        this.setVisible(true);
+        //Creamos agVelocidadLectura
+        agVelocidadLectura = new GridPane();
+        agVelocidadLectura.setHgap(10);
+        agVelocidadLectura.setVgap(10);
+        agVelocidadLectura.setPadding(new Insets(20,5,5,5));
+        agVelocidadLectura.setAlignment(Pos.TOP_CENTER);
+        
+        //Añadimos lbVelocidadLectura a agVelocidadLectura
+        lbVelocidadLectura = new Label("Paginas por hora ");
+        agVelocidadLectura.add(lbVelocidadLectura, 0, 0);
+        
+        //Añadimos sVelocidadLectura a agVelocidadLectura
+        sVelocidadLectura = new Slider(0,100,0);
+        sVelocidadLectura.setShowTickLabels(true);
+        sVelocidadLectura.setShowTickMarks(true);
+        agVelocidadLectura.add(sVelocidadLectura, 1, 0);
+        
+        //Añadimos lbVelocidadLecturaRes a agVelocidadLectura
+        lbVelocidadLecturaRes = new Label("");
+        agVelocidadLectura.add(lbVelocidadLecturaRes, 2, 0);
+                
+        //Añadimos agVelocidadLectura a VBox
+        this.getChildren().add(agVelocidadLectura);
+
+        
+        //Creamos agHorasLectura
+        agHorasLectura = new GridPane();
+        agHorasLectura.setHgap(10);
+        agHorasLectura.setVgap(10);
+        agHorasLectura.setPadding(new Insets(20,5,5,5));
+        agHorasLectura.setAlignment(Pos.TOP_CENTER);
+        
+        //Añadimos lbHorasLectura a agHorasLectura
+        lbHorasLectura = new Label("Paginas por hora ");
+        agHorasLectura.add(lbHorasLectura, 0, 0);
+        
+        //Añadimos sVelocidadLectura a agHorasLectura
+        sHorasLectura = new Slider(0,8,0);
+        sHorasLectura.setShowTickLabels(true);
+        sHorasLectura.setShowTickMarks(true);
+        agHorasLectura.add(sHorasLectura, 1, 0);
+        
+        //Añadimos lbVelocidadLecturaRes a agHorasLectura
+        lbHorasLecturaRes = new Label("");
+        agHorasLectura.add(lbHorasLecturaRes, 2, 0);
+                
+        //Añadimos agVelocidadLectura a VBox
+        this.getChildren().add(agHorasLectura);        
+        
+
     }
 }
