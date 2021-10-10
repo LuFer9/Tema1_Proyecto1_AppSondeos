@@ -51,8 +51,8 @@ public class Lecturas extends VBox{
     Label lbLectura;
     CheckBox cbLectura;
     //Tipo de libro favorito
-    Label lbtipoLibro;
-    ChoiceBox cbtipoLibro;
+    Label lbTipoLibro;
+    ChoiceBox cbTipoLibro;
     //Deslizadores
     Label lbDeslizadores;
     //Numero del libros al año
@@ -234,9 +234,31 @@ public class Lecturas extends VBox{
         this.getChildren().add(agLees);
         
         
-        //
+        //Creamos agTipoLibro
+        agTipoLibro = new GridPane();
+        agTipoLibro.setHgap(10);
+        agTipoLibro.setVgap(10);
+        agTipoLibro.setPadding(new Insets(20,5,20,5));
+        agTipoLibro.setAlignment(Pos.TOP_CENTER);
+        
+        //Añadimos lbTipoLibro a agTipoLibro
+        lbTipoLibro = new Label("¿Qué género de libros?");
+        agTipoLibro.add(lbTipoLibro, 0, 0);
+        //Añadimos cbTipoLibro a agTipoLibro
+        cbTipoLibro = new ChoiceBox();
+        cbTipoLibro.getItems().addAll("Fantasía", "Ciencia-Ficción", "Terror", "Romance", "Historico", "Drama", "Suspense", "Otro");
+        agTipoLibro.add(cbTipoLibro, 1, 0);
+        
+        //Añadimos agTipoLibro a VBox
+        this.getChildren().add(agTipoLibro);
         
         
+        //Añadimos segundo separador a VBox
+        separador2 = new Separator();
+        this.getChildren().add(separador2);
+        
+        
+        //Añadimos 
         
         
         
