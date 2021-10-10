@@ -5,22 +5,17 @@
  */
 package appsondeos;
 
-import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import javafx.application.Application;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
-import javafx.scene.control.Label;
 import javafx.scene.control.Menu;
 import javafx.scene.control.MenuBar;
 import javafx.scene.control.MenuItem;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.HBox;
-import javafx.scene.layout.Pane;
-import javafx.scene.layout.StackPane;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 
@@ -37,6 +32,16 @@ public class AppSondeos extends Application {
         Menu menuEncuesta = new Menu("Encuesta");
         MenuItem encuesta = new MenuItem("Realizar encuesta");
         MenuItem salir = new MenuItem("Salir");
+        
+        //Añadimos la acción de salir al menú "Salir"
+        salir.setOnAction(new EventHandler<ActionEvent>() {
+            
+            @Override
+            public void handle(ActionEvent event) {
+                System.exit(0);
+            }
+        });
+        
         menuEncuesta.getItems().add(encuesta);
         menuEncuesta.getItems().add(salir);
 
@@ -62,12 +67,12 @@ public class AppSondeos extends Application {
         ventana.getChildren().add(iv1);
         
         //Creamos la escena
-        Scene scene = new Scene(ventana, 300, 250);
-        
+        Scene scene = new Scene(ventana, 300, 190);
+          
         primaryStage.setTitle("");
         primaryStage.setScene(scene);
         primaryStage.show();
-    }
+    }   
 
     /**
      * @param args the command line arguments
