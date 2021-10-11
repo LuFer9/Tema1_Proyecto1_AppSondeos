@@ -27,7 +27,7 @@ public class AppSondeos extends Application {
         tab.setContent(lect);
         tabPane.getTabs().add(tab);
 
-        Scene scene = new Scene(tabPane, 400, 600);
+        Scene scene = new Scene(tabPane, 400, 550);
 
         primaryStage.setTitle("Hello World!");
         primaryStage.setScene(scene);
