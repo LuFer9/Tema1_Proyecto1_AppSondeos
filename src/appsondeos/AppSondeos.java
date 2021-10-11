@@ -102,12 +102,13 @@ public class AppSondeos extends Application {
             initModality(Modality.APPLICATION_MODAL);
             
             Group root = new Group();
-            Scene scene = new Scene(root, 250, 150, Color.WHITE);
+            Scene scene = new Scene(root, 500, 600, Color.WHITE);
             setScene(scene);
             
             // Encuesta de deportes
+            Deportes deportes = new Deportes();
             Tab tabDeporte = new Tab("Deportes");
-            //tabDeporte.setContent();
+            tabDeporte.setContent(deportes);
             
             // Encuesta de animales
             Tab tabAnimales = new Tab("Animales");
@@ -122,8 +123,9 @@ public class AppSondeos extends Application {
             //tabViajes.setContent();
             
             // Encuesta de lecturas
+            Lecturas lecturas = new Lecturas();
             Tab tabLecturas = new Tab("Lecturas");
-            //tabLecturas.setContent();
+            tabLecturas.setContent(lecturas);
             
             // Añadimos las tabs a la barra de tabs
             TabPane tabs = new TabPane(tabDeporte,tabAnimales,tabComidas,tabViajes,tabLecturas);
